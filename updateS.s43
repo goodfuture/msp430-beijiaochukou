@@ -1,0 +1,135 @@
+#include <msp430xG46x.h>
+
+  PUBLIC ClearFlashSection
+  PUBLIC WriteFlashSection
+  PUBLIC ChangeINTVector
+  PUBLIC Relocation
+  ;PUBLIC MAINSTART
+
+  EXTERN SECTIONS
+  EXTERN PROG_SADDR
+  EXTERN PROG_BYTENUM
+  EXTERN NewProg
+  EXTERN ProgUpdateRX_ISR
+  ;EXTERN NewProgStoreAddr
+  ;EXTERN __program_start
+
+/*  ORG 0X5342
+  //#pragma vector=RESET_VECTOR
+
+MAINSTART
+  MOV.W #WDTPW+WDTHOLD,&WDTCTL
+  BRA #__program_start*/
+  ORG 0X1B000
+ClearFlashSection             ;定义在Flash高段
+  MOV #WDTPW+WDTHOLD,&WDTCTL  ;disable watchdog
+  MOV #FWKEY+FSSEL1+FN3,&FCTL2  ;SMCLK/9
+  MOV #FWKEY,&FCTL3             ;clear LOCK
+  MOV #FWKEY+ERASE,&FCTL1
+
+  MOVX.A &SECTIONS,R12
+  CLRX.W 0(R12)
+  MOV #FWKEY+LOCK,&FCTL3
+  RETA
+
+
+ChangeINTVector
+  MOV   #WDTPW+WDTHOLD,&WDTCTL
+  MOV   #FWKEY+FSSEL1+FN0,&FCTL2
+  MOV   #FWKEY,&FCTL3
+  MOV   #FWKEY+WRT,&FCTL1
+  MOV.W #ProgUpdateRX_ISR,&0FFF2h
+  MOV   #FWKEY,&FCTL1
+  MOV   #FWKEY+LOCK,&FCTL3
+/*
+  MOV   #FWKEY+FSSEL1+FN0,&FCTL2
+  MOV   #FWKEY,&FCTL3
+  MOV   #FWKEY+WRT,&FCTL1
+  MOV.W #UPSTART,&0FFFEh
+  MOV   #FWKEY,&FCTL1
+  MOV   #FWKEY+LOCK,&FCTL3*/
+  RETA
+  ;ORG 0X1100
+  ORG 0X1B100
+WriteFlashSection       ;定义在起始地址为0x1100的RAM中
+  MOV.W &PROG_BYTENUM,R5
+  MOV.W #NewProg+3,R12
+  MOVX.A &PROG_SADDR,R6
+  MOV #WDTPW+WDTHOLD,&WDTCTL ; Disable WDT
+L1 
+  BIT #BUSY,&FCTL3 ; Test BUSY
+  JNZ L1 ; Loop while busy
+  MOV #FWKEY+FSSEL1+FN0,&FCTL2 ; SMCLK/2
+  MOV #FWKEY,&FCTL3 ; Clear LOCK
+  MOV #FWKEY+WRT,&FCTL1 ; Enable write
+  MOVX.B 0(R12),0(R6)
+  //MOV #0123h,&0FF1Eh ; 0123h .> 0FF1Eh
+L2 
+  BIT #BUSY,&FCTL3 ; Test BUSY
+  JNZ L2 ; Loop while busy
+  MOV #FWKEY,&FCTL1 ; Clear WRT
+  MOV #FWKEY+LOCK,&FCTL3 ; Set LOCK
+  
+  INCX.A R6
+  INC R12
+  DEC R5
+  JNZ L1
+  RETA
+/*
+WriteFlashSection       ;定义在起始地址为0x1100的RAM中
+  MOV.W &PROG_BYTENUM,R5
+  MOV.W #NewProg+3,R12
+  ;MOV.W #01500h,R12
+  MOVX.A &PROG_SADDR,R6
+  MOV #WDTPW+WDTHOLD,&WDTCTL
+L1
+  BIT #BUSY,&FCTL3
+  JNZ L1
+  MOV #FWKEY+FSSEL1+FN0,&FCTL2
+  MOV #FWKEY,&FCTL3
+  MOV #FWKEY+BLKWRT+WRT,&FCTL1
+L2
+  ;MOV #3100,0(R6)
+  MOVX.B 0(R12),0(R6)
+L3
+  BIT #WAIT,&FCTL3
+  JZ L3
+  INCX.A R6
+  INC R12
+  DEC R5
+  JNZ L2
+  MOV #FWKEY,&FCTL1
+L4
+  BIT #BUSY,&FCTL3
+  JNZ L4
+  MOV #FWKEY+LOCK,&FCTL3
+  RETA
+*/
+
+Relocation
+  MOVX.A #WriteFlashSection,R12
+  MOVX.A #Relocation,R14
+  MOV.W  #1100h,R5
+REL1:
+  MOVX.B 0(R12),0(R5)
+  INC R5
+  INCX.A R12
+  CMPA R12,R14
+  JNZ REL1
+  RETA
+
+/*
+  ORG 0XFD20
+UPSTART
+  MOV     #SFE(CSTACK), SP
+  MOV.W 	#WDTPW+WDTHOLD,&120h
+*/
+/*
+  NAME reset
+  ASEG
+  ORG 0XFFFE
+  EVEN
+reset: DC16 START
+  END
+*/
+  END

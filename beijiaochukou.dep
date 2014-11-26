@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\lnk430FG4618app.xcl</file>
+      <file>$PROJ_DIR$\Debug\Exe\beijiaochukou.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\protocol.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\stdlib.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\protocol.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\times.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\flash.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\modbus.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\flash.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\cpu_init.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\update.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\cstartup.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\updateS.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\times.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\runlog.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\cfi.m43</file>
+      <file>$PROJ_DIR$\Debug\Obj\runlog.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\modbus.r43</file>
+      <file>$TOOLKIT_DIR$\inc\clib\sysmac.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\AT24C64.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\beijiaochukou.pbd</file>
+      <file>$PROJ_DIR$\Debug\Obj\cpu_init.pbi</file>
+      <file>$TOOLKIT_DIR$\lib\clib\cl430xf.r43</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\config\multiplier.xcl</file>
+      <file>$TOOLKIT_DIR$\inc\msp430xG46x.h</file>
+      <file>$TOOLKIT_DIR$\inc\macros.m43</file>
+      <file>$PROJ_DIR$\Debug\Obj\IS752_driver.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\LCD.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\LCD.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\clib\string.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\IS752_driver.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\update.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\AT24C64.pbi</file>
+      <file>$PROJ_DIR$\cstartup.s43</file>
+      <file>$PROJ_DIR$\define.h</file>
+      <file>$PROJ_DIR$\flash.c</file>
+      <file>$PROJ_DIR$\IS752_driver.c</file>
+      <file>$PROJ_DIR$\LCD.c</file>
+      <file>$PROJ_DIR$\cpu_init.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\modbus.c</file>
+      <file>$PROJ_DIR$\msp430xG46x.h</file>
+      <file>$PROJ_DIR$\protocol.c</file>
+      <file>$PROJ_DIR$\runlog.c</file>
+      <file>$PROJ_DIR$\test.h</file>
+      <file>$PROJ_DIR$\times.c</file>
+      <file>$PROJ_DIR$\update.c</file>
+      <file>$PROJ_DIR$\update.h</file>
+      <file>$PROJ_DIR$\updateS.s43</file>
+      <file>$PROJ_DIR$\zimo.h</file>
+      <file>$PROJ_DIR$\AT24C64.c</file>
+      <file>$PROJ_DIR$\cpu.h</file>
+    </outputs>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\beijiaochukou.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 0 25 20 28 29 9 11 8 14 18 4 17 13 35 12 23</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Obj\beijiaochukou.pbd</name>
+      <inputs>
+        <tool>
+          <name>BILINK</name>
+          <file> 36 32 30 22 6 33 7 2 15 5 10</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 1</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cstartup.s43</name>
+      <outputs>
+        <tool>
+          <name>A430</name>
+          <file> 11</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A430</name>
+          <file> 27 16 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\flash.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 8</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\IS752_driver.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 28</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 32</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55 31 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55 31 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\LCD.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 30</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 31 19 38 48 55 53</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 31 19 38 48 55 53</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\cpu_init.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 9</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 33</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 31 19 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 31 19 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\modbus.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 18</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 7</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55 31 19</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55 31 19</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\protocol.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 4</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 2</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55 31 19 3</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55 31 19 3</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\runlog.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 17</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 31 19 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 31 19 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\times.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 13</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 5</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\update.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 35</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 31 19 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 31 19 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\updateS.s43</name>
+      <outputs>
+        <tool>
+          <name>A430</name>
+          <file> 12</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>A430</name>
+          <file> 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\AT24C64.c</name>
+      <outputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 36</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 24 34 48 55</file>
+        </tool>
+      </inputs>
+    </file>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
